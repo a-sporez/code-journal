@@ -1,20 +1,12 @@
 --[[
-To create a terminal in LÖVE 2D that reads certain words as input and processes them, you'll need to implement a text input system and a way to parse the input for specific commands or keywords.
-
-Here’s a basic outline of how to do this:
-
 1. Set Up Input Capture:
 Use LÖVE’s love.textinput to capture typed characters and love.keypressed for handling special keys (like Enter or Backspace).
-
 2. Store User Input:
 Create a string that stores the characters the user types.
-
 3. Process the Input:
 Once the user presses Enter, process the input to check for specific words or commands.
-
 4. Respond to Commands:
 Use conditional statements to check if the input matches the command you expect and then execute the corresponding logic.
-
 Here’s an example:
 --]]
 -- Terminal state
