@@ -45,34 +45,6 @@ If `angleDiff` is larger than the threshold, we move `self.angle` gradually in t
 
 By multiplying these, `self.angle` is updated in the shortest direction, advancing the entity’s angle incrementally toward `targetAngle`.
 
-#### Entities
-
-Your code is structured well, and it keeps each entity's attributes local to that entity instance, which is great for handling individual movements and selections. To expand on this with the acceleration/deceleration and turn speed we discussed, here’s how you might adapt the movement logic in `moveToTarget` for smoother behavior:
-
-### 1. Adding New Attributes in `newEntity`
-
-You’ll need to add `velocity`, `acceleration`, `deceleration`, `maxSpeed`, and `turnSpeed` to each entity. Here’s how you could integrate them:
-
-```lua
-function Entities.newEntity(x, y, radius, color)
-    return {
-        x = x or 100,
-        y = y or 100,
-        radius = radius or 10,
-        color = color or colors.white,
-        selected = false,
-        target = nil,
-        velocity = 0,
-        acceleration = 50,  -- Customize as needed
-        deceleration = 30,  -- Customize as needed
-        maxSpeed = 100,
-        turnSpeed = math.rad(90),  -- 90 degrees per second
-        angle = 0,
-        targetAngle = 0,
-        
-        -- Existing methods like toggleSelected, checkPressed, draw, etc.
-```
-
 ### 2. Refined `moveToTarget` with Turn Speed and Acceleration
 
 Here’s how you can adjust the `moveToTarget` function to use acceleration/deceleration and turn speed.
